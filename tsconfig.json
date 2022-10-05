@@ -13,7 +13,14 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "@vue/compiler-core/dist/compiler-core",
+      "@vue/compiler-dom/dist/compiler-dom",
+      "@vue/compiler-sfc/dist/compiler-sfc",
+      "@vue/compiler-ssr/dist/compiler-ssr",
+      "@vue/reactivity/dist/reactivity",
+      "@vue/runtime-core/dist/runtime-core",
+      "@vue/runtime-dom/dist/runtime-dom"
     ],
     "paths": {
       "@/*": [
@@ -25,7 +32,7 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
   },
   "include": [
     "src/**/*.ts",

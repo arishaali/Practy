@@ -40,7 +40,6 @@ library.add(
   faChevronRight
 );
 
-
 createApp(App)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)

@@ -1,13 +1,13 @@
 <template>
   <div v-if="TotalPages() > 0" class="font-semibold flex space-x-1">
     <button
+      id="prevButton"
       :class="this.currentPage == 1 ? 'text-gray-400' : 'text-black'"
-      @click="updatePage(currentPage - 1)"
+      @click="PrevPage"
       class="cursor-pointer border border-gray-200 rounded-lg py-2 px-3 font-semibold"
     >
       &lt;
     </button>
-    <!-- {{ currentPage + 1 }} of {{ TotalPages()}}  -->
     <div v-for="page in TotalPages()" :key="page">
       <span @click.prevent="updatePage(page)">
         <div
@@ -15,16 +15,15 @@
           class="border border-gray-200 rounded-lg py-2 px-3 cursor-pointer"
         >
           {{ page }}
-          <!-- <span class="transform -rotate-45">{{ page }}</span> -->
         </div>
       </span>
     </div>
-    <!-- <span class="cursor-pointer border border-gray-200 rounded-lg py-2 px-3">{{ currentPage + 1 }} of {{ TotalPages()}}</span> -->
     <button
+      id="nextButton"
       :class="
         this.currentPage == this.TotalPages() ? 'text-gray-400' : 'text-black'
       "
-      @click="updatePage(currentPage + 1)"
+      @click="NextPage"
       class="cursor-pointer border border-gray-200 rounded-lg py-2 px-3 font-semibold"
     >
       &gt;
@@ -55,6 +54,12 @@ export default defineComponent({
     },
     TotalPages() {
       return Math.ceil(this.cards.length / this.pageSize);
+    },
+    PrevPage() {
+      return this.updatePage(this.currentPage - 1);
+    },
+    NextPage() {
+      return this.updatePage(this.currentPage + 1);
     },
   },
 });

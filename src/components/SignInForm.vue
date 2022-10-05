@@ -13,6 +13,7 @@
         <input
           type="email"
           name="email"
+          v-model="email"
           placeholder="john.doe@gmail.com"
           class="border border-gray-300 text-sm rounded-lg block w-full p-3 mt-2"
         />
@@ -27,6 +28,7 @@
         <input
           type="password"
           name="password"
+          v-model="password"
           placeholder="********"
           class="border border-gray-300 text-lg rounded-lg block w-full p-3 mt-2"
         />
@@ -38,8 +40,7 @@
         <button
           @click="SignIn"
           id="SignIn"
-          type="button"
-          class="text-white bg-primary py-3 px-14 md:px-6 lg:px-14 rounded-full my-28 md:my-24 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          class="text-white text-sm md:text-lg bg-primary py-2 px-10 md:px-6 lg:px-14 rounded-full my-28 md:my-24 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
           Sign In
         </button>
@@ -56,6 +57,8 @@ export default defineComponent({
   data() {
     return {
       Login: false,
+      email: "",
+      password: "",
     };
   },
   methods: {

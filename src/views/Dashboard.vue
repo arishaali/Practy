@@ -13,8 +13,8 @@
       <Tags :cards="cards" :visibleCards="visibleCards" />
 
       <!-- card -->
-      <div  class="flex flex-col my-6 space-y-6">
-      <Cards :cards="cards" :visibleCards="visibleCards" />
+      <div class="flex flex-col my-6 space-y-6">
+        <Cards :cards="cards" :visibleCards="visibleCards" />
       </div>
 
       <!-- pagination -->
@@ -36,14 +36,14 @@ import Navbar from "@/components/Navbar.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import Pagination from "@/components/Pagination.vue";
 import Tags from "@/components/Tags.vue";
-import Cards from "@/components/Cards.vue"
+import Cards from "@/components/Cards.vue";
 export default defineComponent({
   components: {
     Navbar,
     SearchBar,
     Pagination,
     Tags,
-    Cards
+    Cards,
   },
   data() {
     return {
