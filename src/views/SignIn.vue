@@ -21,7 +21,7 @@
       </h1>
       <SignInForm />
 
-      <div class="flex justify-center items-center mt-56 md:mt-44 mx-12">
+      <div class="flex justify-center items-center mt-44 mx-12">
         <div class="h-px bg-yellow flex-grow"></div>
         <span class="flex-shrink text-sm lg:text-base px-1 lg:px-2"
           >Or sign in with</span

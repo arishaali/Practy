@@ -9,7 +9,7 @@
     ></div>
     <!-- name & date -->
     <div class="flex justify-between">
-      <h3 data-test="card" class="font-bold text-base md:text-2xl">
+      <h3 class="font-bold text-base md:text-2xl">
         {{ card.heading }}
       </h3>
       <p class="font-semibold text-xs md:text-sm">{{ card.date }}</p>

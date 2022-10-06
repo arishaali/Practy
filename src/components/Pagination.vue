@@ -1,5 +1,5 @@
 <template>
-  <div v-if="TotalPages() > 0" class="font-semibold flex space-x-1">
+  <div v-show="Pages > 0" id="TotalPages" class="font-semibold flex space-x-1">
     <button
       id="prevButton"
       :class="this.currentPage == 1 ? 'text-gray-400' : 'text-black'"
@@ -49,19 +49,19 @@ export default defineComponent({
       default: 4,
     },
   },
-  // data() {
-  //   return{
-  //     pages: []
-  //   }
-  // },
+  data() {
+    return {
+      Pages: 0,
+    };
+  },
+  beforeMount() {
+    this.Pages = this.Pages + Math.ceil(this.cards.length / this.pageSize);
+  },
   methods: {
     updatePage(pageNo: number) {
       this.$emit("page:update", pageNo);
     },
     TotalPages() {
-      // for (let i = 1; i = Math.ceil(this.cards.length / this.pageSize) ; i++) {
-      //   this.pages.push({i})
-      // }
       return Math.ceil(this.cards.length / this.pageSize);
     },
     PrevPage() {
