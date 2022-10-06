@@ -29,24 +29,18 @@
         <div class="h-px bg-yellow flex-grow"></div>
       </div>
       <div class="flex justify-center space-x-4 mt-8 md:mt-10">
-        <a href=""
-          ><img
-            src="..\assets\Google.png"
-            alt="Google Icon"
-            class="bg-white border border-blue-400 p-3 rounded-full drop-shadow-2xl"
-        /></a>
-        <a href=""
-          ><img
-            src="..\assets\Twitter.png"
-            alt="Twitter Icon"
-            class="border border-blue-300 p-3 rounded-full drop-shadow-2xl"
-        /></a>
-        <a href=""
-          ><img
-            src="..\assets\Facebook.png"
-            alt="Facebook Icon"
-            class="border border-blue-700 p-3 rounded-full drop-shadow-2xl"
-        /></a>
+        <SocialIcon
+          :src="require('../assets/Google.png')"
+          :alt="'Google Icon'"
+        />
+        <SocialIcon
+          :src="require('../assets/Twitter.png')"
+          :alt="'Twitter Icon'"
+        />
+        <SocialIcon
+          :src="require('../assets/Facebook.png')"
+          :alt="'Facebook Icon'"
+        />
       </div>
       <div class="my-8 md:my-10">
         <p class="text-center text-sm md:text-base">
@@ -62,10 +56,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SignInForm from "@/components/SignInForm.vue";
+import SocialIcon from "@/components/SocialIcon.vue";
 export default defineComponent({
   name: "SignIn",
   components: {
     SignInForm,
+    SocialIcon,
   },
 });
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div class="md:hidden flex items-center relative">
     <div
+      ref="menu"
       @click="menubar = !menubar"
       class="rounded-lg py-2 px-3 bg-primary-rgba border border-primary-rgba flex items-center cursor-pointer"
     >
@@ -8,7 +9,8 @@
     </div>
     <div
       class="flex items-center fixed z-10 overflow-hidden bg-black bg-opacity-25 h-screen w-screen top-0 left-0"
-      v-if="menubar"
+      id="menubar"
+      v-show="menubar"
     >
       <div
         class="absolute top-0 -left-0 bg-primary z-20 h-screen w-72 p-4 border-r-2 border-white"

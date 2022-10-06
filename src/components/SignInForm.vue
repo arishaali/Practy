@@ -3,34 +3,22 @@
     <h4 class="text-2xl md:text-3xl front-bold mt-12">Sign In</h4>
     <div class="bg-yellow h-1 w-12 mt-2 md:w-16 md:mt-4 rounded"></div>
     <form>
-      <div class="mt-8 md:mt-12">
-        <label for="email" class="text-sm text-gray-600"
-          ><font-awesome-icon
-            icon="fa-regular fa-envelope"
-            class="text-yellow mr-2 text-lg"
-          />Email Address</label
-        >
-        <input
-          type="email"
-          name="email"
-          v-model="email"
-          placeholder="john.doe@gmail.com"
-          class="border border-gray-300 text-sm rounded-lg block w-full p-3 mt-2"
-        />
-      </div>
-      <div class="mt-8">
-        <label for="email" class="text-sm text-gray-600"
-          ><font-awesome-icon
-            icon="fa-solid fa-lock"
-            class="text-yellow mr-2 text-lg"
-          />Password</label
-        >
-        <input
-          type="password"
-          name="password"
+      <InputField
+        :type="'email'"
+        :name="'email'"
+        v-model="email"
+        :placeholder="'john.doe@gmail.com'"
+        :label="'Email Address'"
+        :src="require('../assets/mail.png')"
+      />
+      <div>
+        <InputField
+          :type="'password'"
+          :name="'password'"
           v-model="password"
-          placeholder="********"
-          class="border border-gray-300 text-lg rounded-lg block w-full p-3 mt-2"
+          :placeholder="'********'"
+          :label="'Password'"
+          :src="require('../assets/lock.png')"
         />
         <a href="#" class="text-sm underline text-primary float-right mt-1"
           >Forgot Password?</a
@@ -51,9 +39,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import InputField from "@/components/InputField.vue";
 
 export default defineComponent({
-  name: "HelloWorld",
+  name: "SignInForm",
+  components: {
+    InputField,
+  },
   data() {
     return {
       Login: false,

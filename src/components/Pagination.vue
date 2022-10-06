@@ -11,6 +11,7 @@
     <div v-for="page in TotalPages()" :key="page">
       <span @click.prevent="updatePage(page)">
         <div
+          id="currentPage"
           :class="{ 'bg-primary text-white': currentPage === page }"
           class="border border-gray-200 rounded-lg py-2 px-3 cursor-pointer"
         >
@@ -48,11 +49,19 @@ export default defineComponent({
       default: 4,
     },
   },
+  // data() {
+  //   return{
+  //     pages: []
+  //   }
+  // },
   methods: {
     updatePage(pageNo: number) {
       this.$emit("page:update", pageNo);
     },
     TotalPages() {
+      // for (let i = 1; i = Math.ceil(this.cards.length / this.pageSize) ; i++) {
+      //   this.pages.push({i})
+      // }
       return Math.ceil(this.cards.length / this.pageSize);
     },
     PrevPage() {

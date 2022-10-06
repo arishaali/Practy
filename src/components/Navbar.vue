@@ -19,15 +19,21 @@
             <div
               class="hidden md:flex text-white text-sm items-center md:space-x-6 lg:space-x-10"
             >
-              <a href="#" class="py-2 relative" aria-current="page">
-                <span
-                  class="absolute top-8 left-6 w-5 h-1 bg-yellow rounded rounded-b-xl"
-                ></span>
-                Dashboard</a
+              <router-link
+                v-for="page in pages"
+                :key="page"
+                @click="current = page.name"
+                :to="page.path"
+                :class="[
+                  current === page.name ? 'py-2 relative' : 'hover:text-yellow',
+                ]"
               >
-              <a href="#" class="hover:text-yellow">Courses</a>
-              <a href="#" class="hover:text-yellow">Plans</a>
-              <a href="#" class="hover:text-yellow">About Us</a>
+                <span
+                  v-if="current == page.name"
+                  class="absolute top-8 inset-x-0 w-5 h-1 bg-yellow rounded rounded-b-xl table mx-auto"
+                ></span>
+                {{ page.name }}</router-link
+              >
             </div>
           </div>
 
@@ -64,7 +70,10 @@
                 class="text-white text-xl"
               />
             </div>
-            <NotificationBar :notification="notification" />
+            <NotificationBar
+              v-show="notification"
+              :notification="notification"
+            />
           </div>
         </div>
 
@@ -93,6 +102,13 @@ export default defineComponent({
   data() {
     return {
       notification: false,
+      current: "Dashboard",
+      pages: [
+        { id: 1, name: "Dashboard", path: "/dashboard" },
+        { id: 2, name: "Courses", path: "" },
+        { id: 3, name: "Plans", path: "" },
+        { id: 4, name: "About Us", path: "" },
+      ],
     };
   },
 });

@@ -1,6 +1,7 @@
 <template>
   <div
-    v-if="notification"
+    v-show="notification"
+    id="notify"
     class="w-screen h-screen top-0 right-0 md:h-60 md:w-60 absolute md:top-10 md:right-6 z-20 border border-gray-200 bg-white rounded py-3 overflow-y-auto"
   >
     <div

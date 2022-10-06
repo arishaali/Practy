@@ -10,7 +10,14 @@
       </div>
 
       <!-- tags -->
-      <Tags :cards="cards" :visibleCards="visibleCards" />
+      <div
+        class="flex space-x-2 overflow-x-auto scrollbar-hide md:overflow-x-hidden"
+      >
+        <Tag :name="'All'" :selected="true" />
+        <Tag :name="'Chards'" :selected="false" />
+        <Tag :name="'Techniques'" :selected="false" />
+        <Tag :name="'Exercises'" :selected="false" />
+      </div>
 
       <!-- card -->
       <div class="flex flex-col my-6 space-y-6">
@@ -35,14 +42,14 @@ import { defineComponent } from "vue";
 import Navbar from "@/components/Navbar.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import Pagination from "@/components/Pagination.vue";
-import Tags from "@/components/Tags.vue";
+import Tag from "@/components/Tag.vue";
 import Cards from "@/components/Cards.vue";
 export default defineComponent({
   components: {
     Navbar,
     SearchBar,
     Pagination,
-    Tags,
+    Tag,
     Cards,
   },
   data() {
